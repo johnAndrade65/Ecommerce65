@@ -85,7 +85,7 @@
 }
 /*Animação de deslizar para baixo*/
 @keyframes slideDown {
-  0%{
+  0% {
     transform: translateY(-75%);
   }
   100% {
@@ -173,7 +173,7 @@
   filter: brightness(75%);
 }
 
-/*Estilização do componente Products*/
+/*Estilização do componente Products e Promotions*/
 .products-container {
   height: auto;
   max-width: 100%;
@@ -273,19 +273,99 @@
   list-style: none;
   display: flex;
 }
-@media (max-width: 530px) {
-  /* Estilos para telas menores que 480px */
 
-  /* Exemplo de ajuste de tamanho de fonte para telas ainda menores */
+/*Responsividade 1000px largura*/
+@media (max-width: 1000px) {
+  /*Estilização do componente Header*/
   .container h1 a {
-    font-size: 37px;
+    font-size: 7.5vw;
   }
+
+  /*Estilização do componente Highlights*/
   .Highlights {
     padding: 30px 0 10px 0;
   }
+
+  /*Estilização do componente Products e Promotions*/
   .products-container h2 {
     font-size: 30px;
   }
+  .products-container .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-auto-columns: auto;
+  }
+  .products-container .container .product {
+    min-height: 150px;
+    height: 40vw;
+    max-height: 300px;
+    min-width: 150px;
+    width: 40vw;
+    max-width: 300px;
+  }
+  .product h3 {
+    font-size: 18px;
+  }
+  .product p {
+    font-size: 9px;
+  }
+  .product button {
+    font-size: 15px;
+    min-height: 40px;
+    max-width: 300px;
+    min-width: 150px;
+  }
+  .product button:hover {
+    font-size: 20px;
+  }
+
+  /*Estilização do componente Footer*/
+  .footer-content h3 {
+    font-size: 30px;
+  }
+}
+
+/*Responsividade 375px largura*/
+@media (max-width: 375px) {
+  /*Estilização do componente Header*/
+  .container h1 a {
+    font-size: 30px;
+  }
+
+  /*Estilização do componente Products e Promotions*/
+  .products-container h2 {
+    font-size: 30px;
+  }
+  .products-container .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .products-container .container .product {
+    display: flex;
+    min-height: 200px;
+    height: 40vw;
+    min-width: 200px;
+    width: 40vw;
+  }
+  .product h3 {
+    font-size: 18px;
+  }
+  .product p {
+    font-size: 9px;
+  }
+  .product button {
+    min-width: 200px;
+  }
+  .product button:hover {
+    font-size: 20px;
+  }
+
+  /*Estilização do componente Footer*/
   .footer-content h3 {
     font-size: 30px;
   }
