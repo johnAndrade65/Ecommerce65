@@ -9,6 +9,7 @@ import Pets from "../../assets/pets.jpg";
 const Highlights = () => {
   return (
     <div className="Highlights" id="highlights">
+      <div className="container">
         <div className="highlight-item">
           <img src={Eletronics} alt="" />
         </div>
@@ -21,6 +22,7 @@ const Highlights = () => {
         <div className="highlight-item">
           <img src={Pets} alt="" />
         </div>
+      </div>
     </div>
   );
 };

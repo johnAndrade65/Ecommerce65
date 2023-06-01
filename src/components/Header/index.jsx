@@ -4,6 +4,8 @@ import React from "react";
 import MenuDefault from "../MenuDefault";
 import MenuMobile from "../MenuMobile";
 
+import { Link } from "react-router-dom";
+
 //Importação do useState e useEffects
 import { useState, useEffect } from "react";
 
@@ -30,7 +32,7 @@ const Header = () => {
   return (
     <header className="Header-bg">
       <div className="container">
-        <h1>Ecommerce65</h1>
+        <h1><Link to="/">Ecommerce65</Link></h1>
         <div className="header-menu">
           {isWideScreen ? <MenuDefault /> : <MenuMobile />}
         </div>

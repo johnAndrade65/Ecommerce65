@@ -1,7 +1,7 @@
 /* Variaveis CSS */
 :root {
   --main-color: rgb(192, 0, 0);
-
+  --white-color: #fff;
   --font-high: 50px;
   --font-middle: 40px;
 }
@@ -9,12 +9,15 @@
 /*Estilização do componente Header*/
 .Header-bg {
   height: 10vh;
-  width: 100%;
-  max-width: 100vw;
+  width: 100vw;
+  max-width: 100%;
   background-color: var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  position: fixed;
+  top: 0;
 }
 .container {
   height: auto;
@@ -23,9 +26,10 @@
   justify-content: space-between;
   align-items: center;
 }
-.container h1 {
-  color: #fff;
+.container h1 a {
+  color: var(--white-color);
   font-size: var(--font-high);
+  text-decoration: none;
 }
 .container .header-menu {
   max-width: 100%;
@@ -40,21 +44,22 @@
 }
 .container .header-menu ul li,
 .container .header-menu ul li a {
-  font-size: 1.2vw;
+  font-size: 20px;
   color: #5a0000;
   list-style: none;
   text-decoration: none;
+  text-align: center;
 }
 .container .header-menu ul li a:hover {
-  color: #fff;
+  color: var(--white-color);
   transition: 0.3s all ease-in-out;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid var(--white-color);
 }
 .container div .user-icon,
 .user-icon img {
   height: 40px;
   width: 40px;
-  border: 1.5px solid #fff;
+  border: 1.5px solid var(--white-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -65,6 +70,8 @@
 .user-icon:hover img {
   filter: brightness(75%);
 }
+
+/*Estilização do menu Mobile*/
 .MenuMobile button {
   height: 40px;
   width: auto;
@@ -76,6 +83,47 @@
   height: 40px;
   width: auto;
 }
+/*Animação de deslizar para baixo*/
+@keyframes slideDown {
+  0%{
+    transform: translateY(-75%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.MenuMobile .menu-mobile-content {
+  background-color: var(--main-color);
+  height: 50vh;
+  width: 100vw;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 15px 0;
+  border-bottom: 3px solid var(--white-color);
+  animation-name: slideDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.menu-mobile-content button {
+  height: 45px;
+  width: 45px;
+  color: var(--white-color);
+  background-color: #3d0000;
+  position: fixed;
+  right: 0;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+.menu-mobile-content .menu-mobile-items {
+  display: flex;
+  flex-direction: column;
+}
 
 /*Estilização do componente Carousel*/
 .Carousel {
@@ -86,8 +134,9 @@
 .Carousel div,
 .Carousel div img {
   height: 55vw;
-  max-height: 550px;
+  max-height: 700px;
   width: inherit;
+  object-fit: cover;
 }
 .slick-prev,
 .slick-next {
@@ -98,18 +147,24 @@
 .Highlights {
   height: auto;
   width: 100%;
-  margin: 30px 0;
+  background-color: #5a0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw 0;
+}
+.Highlights .container {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 1vw 0;
+  gap: 5px;
 }
-.Highlights div,
-.Highlights div img {
+.Highlights .container div,
+.Highlights .container div img {
   height: 24vw;
-  max-height: 350px;
+  max-height: 300px;
   width: 24vw;
-  max-width: 350px;
+  max-width: 300px;
   border-radius: 50%;
   object-fit: cover;
   transition: all 0.3s ease;
@@ -123,7 +178,7 @@
   height: auto;
   max-width: 100%;
   width: 100vw;
-  background-color: #5a0000;
+  background-color: #3d0000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,7 +187,7 @@
 }
 .products-container h2 {
   text-align: center;
-  color: #fff;
+  color: var(--white-color);
   font-size: var(--font-middle);
 }
 .products-container .container {
@@ -144,7 +199,7 @@
   height: 300px;
   max-height: 300px;
   width: 300px;
-  background-color: #fff;
+  background-color: var(--white-color);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -165,7 +220,7 @@
   font-size: 15px;
 }
 .product button {
-  color: #fff;
+  color: var(--white-color);
   font-size: 20px;
   min-height: 50px;
   width: inherit;
@@ -186,7 +241,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #310000;
+  background-color: #5a0000;
   padding: 15px 0;
 }
 .Footer .container {
@@ -201,7 +256,7 @@
   gap: 15px;
 }
 .footer-content h3 {
-  color: #fff;
+  color: var(--white-color);
   font-size: var(--font-middle);
 }
 .footer-content ul {
@@ -213,7 +268,7 @@
 }
 .footer-content ul li,
 .footer-content ul li a {
-  color: #fff;
+  color: var(--white-color);
   text-decoration: none;
   list-style: none;
   display: flex;
@@ -222,8 +277,11 @@
   /* Estilos para telas menores que 480px */
 
   /* Exemplo de ajuste de tamanho de fonte para telas ainda menores */
-  .container h1 {
+  .container h1 a {
     font-size: 37px;
+  }
+  .Highlights {
+    padding: 30px 0 10px 0;
   }
   .products-container h2 {
     font-size: 30px;

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 //Importação do icone do perfil de usuario
 import ProfileImg from "../../assets/Profile-picture.png";
 
@@ -9,16 +11,13 @@ const MenuDefault = () => {
     <div className='header-menu'>
         <ul>
             <li>
-              <a href="#products">Produtos</a>
+              <Link to="/products">Produtos</Link>
             </li>
             <li>
               <a href="#promotions">Promoções</a>
             </li>
             <li>
               <a href="#highlights">Categorias</a>
-            </li>
-            <li>
-              <a href="">Sobre</a>
             </li>
           </ul>
           <div className="user-icon">
