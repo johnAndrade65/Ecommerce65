@@ -14,9 +14,9 @@
 ## Aviso:
 <ul>
   <li>Ainda em desenvolvimento, apenas as páginas Home e Products criada até o momento e ainda falta eu refatorar o código já disponivel, aguarde por futuras atualizações!</li>
-</ol>
+</ul>
 
-## versão 0.0.2.1, ainda em construção:
+## Versão 0.0.2.1, ainda em construção:
 <ol>
   <li>- Seções Header, Banner, Products, Highlights e Footer.</li>
   <li>- Responsividade com diversos tamanhos de tela!.</li>
