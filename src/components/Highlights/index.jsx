@@ -1,26 +1,33 @@
 import React from "react";
 
 //Importação de images como componentes para serem renderizadas no Highlights/destaques
-import Eletronics from "../../assets/eletronics.webp";
-import Kitchen from "../../assets/kitchen.webp";
-import Bathroom from "../../assets/bathroom.jpg";
-import Pets from "../../assets/pets.jpg";
+import { ProductsContext } from "../../contexts";
+import { useContext } from 'react';
+
+//Importação das imagens
+import EletronicsImg from '../../assets/eletronics.webp';
+import BathroomImg from '../../assets/bathroom.jpg';
+import KitchenImg from '../../assets/kitchen.webp';
+import PetsImg from '../../assets/pets.jpg';
 
 const Highlights = () => {
+
+  const { products } = useContext(ProductsContext);
+
   return (
     <div className="Highlights" id="highlights">
       <div className="container">
         <div className="highlight-item">
-          <img src={Eletronics} alt="" />
+          <img src={EletronicsImg} alt={products.name.eletronics} />
         </div>
         <div className="highlight-item">
-          <img src={Kitchen} alt="" />
+          <img src={BathroomImg} alt={products.name.bathroom}/>
         </div>
         <div className="highlight-item">
-          <img src={Bathroom} alt="" />
+          <img src={KitchenImg} alt={products.name.kitchen}/>
         </div>
         <div className="highlight-item">
-          <img src={Pets} alt="" />
+          <img src={PetsImg} alt={products.name.pets}/>
         </div>
       </div>
     </div>

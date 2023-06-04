@@ -6,10 +6,11 @@ import Promotions from './../../components/Promotions';
 
 //Página dedicada a exposição dos produtos dá nossa web aplicação
 const ProductsPage = () => {
+
   return (
     <div className="Products">
-      <Promotions />
-      <Products />
+      <Promotions products={products}/>
+      <Products products={products}/>
     </div>
   );
 };

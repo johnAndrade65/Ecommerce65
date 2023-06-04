@@ -274,11 +274,11 @@
   display: flex;
 }
 
-/*Responsividade 1000px largura*/
+/*Responsividade de telas com largura menor que 1000px*/
 @media (max-width: 1000px) {
   /*Estilização do componente Header*/
   .container h1 a {
-    font-size: 7.5vw;
+    font-size: 7.8vw;
   }
 
   /*Estilização do componente Highlights*/
@@ -288,7 +288,7 @@
 
   /*Estilização do componente Products e Promotions*/
   .products-container h2 {
-    font-size: 30px;
+    font-size: 26px;
   }
   .products-container .container {
     display: grid;
@@ -324,11 +324,11 @@
 
   /*Estilização do componente Footer*/
   .footer-content h3 {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
-/*Responsividade 375px largura*/
+/*Responsividade de telas com largura menor que 375px*/
 @media (max-width: 375px) {
   /*Estilização do componente Header*/
   .container h1 a {
@@ -337,7 +337,7 @@
 
   /*Estilização do componente Products e Promotions*/
   .products-container h2 {
-    font-size: 30px;
+    font-size: 25px;
   }
   .products-container .container {
     display: flex;
@@ -367,6 +367,8 @@
 
   /*Estilização do componente Footer*/
   .footer-content h3 {
-    font-size: 30px;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 15px;
   }
 }

@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/_imagens/*"
+  to = "/index.html"
+  status = 200
