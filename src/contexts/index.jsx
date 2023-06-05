@@ -1,5 +1,12 @@
 import { useState, createContext } from "react";
 
+//Imagens dos produtos
+import EletronicsImg from "./../../public/assets/eletronics.png";
+import BathroomImg from "./../../public/assets/bathroom.png";
+import KitchenImg from "./../../public/assets/kitchen.png";
+import PetsImg from "./../../public/assets/pets.png";
+
+//Exportando o context de dados para ser acessados em outros elementos da aplicação
 export const ProductsContext = createContext({});
 
 //Uso do Context Api para compartilhar os valores do usestate "products" com outros componentes
@@ -7,27 +14,23 @@ const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState({
     1: {
       name: "Eletronicos",
-      price: 10,
       description: "Produtos eletronico..",
-      img:  "/public/assets/eletronics.png",
+      img:  EletronicsImg,
     },
     2: {
       name: "Cozinha",
-      price: 20,
       description: "Produtos de cozinha..",
-      img: "/public/assets/kitchen.png",
+      img: KitchenImg,
     },
     3: {
       name: "Banheiro",
-      price: 20,
       description: "Produtos para banheiro..",
-      img: "/public/assets/bathroom.png",
+      img: BathroomImg,
     },
     4: {
       name: "Pets",
-      price: 10,
       description: "Produtos para Pets..",
-      img:  "/public/assets/pets.png",
+      img:  PetsImg,
     }
   });
 
