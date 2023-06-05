@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 //Icone do menu para dispositivos moveis
-import MenuMobileIcon from "../../assets/menu-icon.png";
+import MenuMobileIcon from "../../../public/assets/Menu-icon.png";
 
 //Componente Link do react-router-dom para apontar qual página deve ir quando clicado
 import { Link } from "react-router-dom";

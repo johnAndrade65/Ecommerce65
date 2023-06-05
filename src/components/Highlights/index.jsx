@@ -4,12 +4,6 @@ import React from "react";
 import { ProductsContext } from "../../contexts";
 import { useContext } from 'react';
 
-//Importação das imagens
-import EletronicsImg from '../../assets/eletronics.webp';
-import BathroomImg from '../../assets/bathroom.jpg';
-import KitchenImg from '../../assets/kitchen.webp';
-import PetsImg from '../../assets/pets.jpg';
-
 const Highlights = () => {
 
   const { products } = useContext(ProductsContext);
@@ -18,16 +12,16 @@ const Highlights = () => {
     <div className="Highlights" id="highlights">
       <div className="container">
         <div className="highlight-item">
-          <img src={EletronicsImg} alt={products.name.eletronics} />
+          <img src={products[1].img} alt={products[1].name} />
         </div>
         <div className="highlight-item">
-          <img src={BathroomImg} alt={products.name.bathroom}/>
+          <img src={products[3].img} alt="Produtos de banheiro"/>
         </div>
         <div className="highlight-item">
-          <img src={KitchenImg} alt={products.name.kitchen}/>
+          <img src={products[2].img} alt={products[2].name}/>
         </div>
         <div className="highlight-item">
-          <img src={PetsImg} alt={products.name.pets}/>
+          <img src={products[4].img} alt="Produtos para Pets"/>
         </div>
       </div>
     </div>
