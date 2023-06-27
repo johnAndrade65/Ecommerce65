@@ -12,7 +12,7 @@ const Promotions = () => {
     <div className="products-container" id="promotions">
       <h2>Queima de estoque!</h2>
       <div className="container">
-        {Object.keys(products).map((productId) => {
+        {Object.keys(products).slice(0, 4).map((productId) => {
           const product = products[productId];
           return (
             <div key={productId} className="product">

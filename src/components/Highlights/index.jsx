@@ -15,13 +15,13 @@ const Highlights = () => {
           <img src={products[1].img} alt={products[1].name} />
         </div>
         <div className="highlight-item">
-          <img src={products[3].img} alt="Produtos de banheiro"/>
+          <img src={products[3].img} alt={products[3].name}/>
         </div>
         <div className="highlight-item">
           <img src={products[2].img} alt={products[2].name}/>
         </div>
         <div className="highlight-item">
-          <img src={products[4].img} alt="Produtos para Pets"/>
+          <img src={products[4].img} alt={products[4].name}/>
         </div>
       </div>
     </div>

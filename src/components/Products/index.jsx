@@ -8,11 +8,13 @@ import { useContext } from "react";
 const Products = () => {
   const { products } = useContext(ProductsContext);
 
+  const randomProducts = Object.keys(products).sort(() => Math.random() - 0.5);
+
   return (
     <div className="products-container" id="products">
       <h2>Produtos em alta!</h2>
       <div className="container">
-        {Object.keys(products).map((productId) => {
+        {randomProducts.slice(0, 8).map((productId) => {
           const product = products[productId];
           return (
             <div key={productId} className="product">

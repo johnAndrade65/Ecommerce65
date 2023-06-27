@@ -31,6 +31,26 @@ const ProductsProvider = ({ children }) => {
       name: "Pets",
       description: "Produtos para Pets..",
       img:  PetsImg,
+    },
+    5: {
+      name: "Eletronicos 2",
+      description: "Produtos eletronico..",
+      img:  EletronicsImg,
+    },
+    6: {
+      name: "Cozinha 2",
+      description: "Produtos de cozinha..",
+      img: KitchenImg,
+    },
+    7: {
+      name: "Banheiro 2",
+      description: "Produtos para banheiro..",
+      img: BathroomImg,
+    },
+    8: {
+      name: "Pets 2",
+      description: "Produtos para Pets..",
+      img:  PetsImg,
     }
   });
 
