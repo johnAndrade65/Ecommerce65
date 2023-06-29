@@ -12,8 +12,8 @@
 
 ## Atualização nos componentes Products e Promotions, versão 0.0.2.4:
 <ol>
-  <li>- Componente Promotions só irá renderizar os 4 primeiros produtos do objeto "products".<li>
-  <li>- Componente Products irá renderizar apenas 6 produtos por vez, em ordem aleatoria do objeto "products" que simula um JSON.<li>
+  <li>- Componente Promotions só irá renderizar os 4 primeiros produtos do objeto "products".</li>
+  <li>- Componente Products irá renderizar apenas 6 produtos por vez, em ordem aleatoria do objeto "products" que simula um JSON.</li>
   <li>- Correção de erros de estilização no componente "Products" e "Promotions" no botão de "comprar agora" na versão mobile onde o texto estava estourando para fora do botão.</li>
   <li>- Mudanças de estilização no componente "Products" e "Promotions" nas resoluções maiores que 1000vw(largura), agora usamos "display:grid" para organizar os produtos, anteriormente usavamos "display:flex".</li>
 </ol>
