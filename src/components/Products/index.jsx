@@ -4,9 +4,12 @@ import React from "react";
 import { ProductsContext } from "../../contexts";
 import { useContext } from "react";
 
-//Componente "Products" onde será exibido algusn dos produtos disponiveis
+//Link do react router dom para acessar outrass páginas sem necessidade de recarregar o site
+import { Link } from "react-router-dom";
+
+//Componente "Products" onde será exibido alguns dos produtos disponiveis
 const Products = () => {
-  const { products } = useContext(ProductsContext);
+  const { products, handleButton } = useContext(ProductsContext);
 
   const randomProducts = Object.keys(products).sort(() => Math.random() - 0.5);
 
@@ -21,7 +24,15 @@ const Products = () => {
               <img src={product.img} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <button>Comprar agora</button>
+              <Link to={"/productdetails/"} className="link-buy">
+                <button
+                  onClick={() =>
+                    handleButton(product.name, product.img, product.description)
+                  }
+                >
+                  Comprar agora
+                </button>
+              </Link>
             </div>
           );
         })}

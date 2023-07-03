@@ -222,7 +222,7 @@
 .product p {
   font-size: 15px;
 }
-.product button {
+.product .link-buy, .product .link-buy button{
   color: var(--white-color);
   font-size: 20px;
   min-height: 50px;
@@ -233,9 +233,57 @@
   background-color: var(--main-color);
   transition: all 0.2s ease;
 }
-.product button:hover {
+.product .link-buy, .product .link-buy button:hover {
   font-size: 23px;
   cursor: pointer;
+}
+
+/*Estilização do componente ChosenProduct*/
+.productDetails{
+  display: flex;
+  justify-content: center;
+}
+#ChosenProduct{
+  height: auto;
+  min-height: 75vh;
+  padding: 55px 0;
+  flex-direction: column;
+}
+#ChosenProduct img{
+  height: 500px;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+#ChosenProduct div{
+  background-color: #f1f1f1;
+  height: 200px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+#ChosenProduct div h1{
+  font-size: 3em;
+}
+#ChosenProduct div p{
+  padding: 5px;
+}
+#ChosenProduct button{
+  color: #fff;
+  font-size: 20px;
+  width: 100%;
+  background-color: var(--main-color);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+}
+#ChosenProduct button:hover{
+  cursor: pointer;
+  background-color: rgb(255, 0, 0);
 }
 
 /*Estilização do componente Footer*/
@@ -313,19 +361,34 @@
   .product p {
     font-size: 9px;
   }
-  .product button {
+  .product .link-buy, .product .link-buy button {
     font-size: 15px;
     min-height: 40px;
     max-width: 300px;
     min-width: 150px;
   }
-  .product button:hover {
+  .product .link-buy, .product .link-buy button:hover {
     font-size: 18px;
   }
 
   /*Estilização do componente Footer*/
   .footer-content h3 {
     font-size: 25px;
+  }
+
+  /*Estilização do componente ChosenProduct*/
+  #ChosenProduct img{
+    height: 500px;
+    width: 100%;
+    max-width: 500px;
+  }
+  #ChosenProduct div{
+    height: 200px;
+    width: 100%;
+    max-width: 500px;
+  }
+  #ChosenProduct div h1{
+    font-size: 2em;
   }
 }
 
@@ -359,10 +422,10 @@
   .product p {
     font-size: 9px;
   }
-  .product button {
+  .product .link-buy, .product .link-buy button{
     min-width: 200px;
   }
-  .product button:hover {
+  .product .link-buy, .product .link-buy button:hover {
     font-size: 20px;
   }
 

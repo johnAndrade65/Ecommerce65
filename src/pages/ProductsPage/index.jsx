@@ -9,8 +9,8 @@ const ProductsPage = () => {
 
   return (
     <div className="Products">
-      <Promotions products={products}/>
-      <Products products={products}/>
+      <Promotions/>
+      <Products/>
     </div>
   );
 };
