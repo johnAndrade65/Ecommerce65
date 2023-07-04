@@ -11,12 +11,6 @@ export const ProductsContext = createContext({});
 
 //Uso do Context Api para compartilhar os valores do usestate "products" com outros componentes
 const ProductsProvider = ({ children }) => {
-  const initialProductsDataVar = {
-    name: "",
-    img: "",
-    description: "",
-  };
-
   const [products, setProducts] = useState({
     1: {
       name: "Eletronicos",
@@ -66,13 +60,7 @@ const ProductsProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    //Recuperar o valor armazenado do local storage
-    const storedProductsDataVar = localStorage.getItem("productsDataVar");
-
-    //Verificar se o valor existe no local storage e definir o estado
-    if (storedProductsDataVar) {
-      setProductsDataVar(JSON.parse(storedProductsDataVar));
-    }
+    setProductsDataVar()
   }, []);
 
   const handleButton = (name, img, description) => {
@@ -80,9 +68,6 @@ const ProductsProvider = ({ children }) => {
 
     //Atualizar o estado
     setProductsDataVar(newProductsDataVar);
-
-    //Armazenar o valor no local storage
-    localStorage.setItem("productsDataVar", JSON.stringify(newProductsDataVar));
   };
 
   return (

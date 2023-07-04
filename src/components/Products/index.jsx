@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 //Componente "Products" onde será exibido alguns dos produtos disponiveis
 const Products = () => {
-  const { products, handleButton } = useContext(ProductsContext);
+  const { products, handleButton, productsDataVar } = useContext(ProductsContext);
 
   const randomProducts = Object.keys(products).sort(() => Math.random() - 0.5);
 
@@ -24,7 +24,7 @@ const Products = () => {
               <img src={product.img} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <Link to={"/productdetails/"} className="link-buy">
+              <Link to={`/productdetails/${productsDataVar.name}`} className="link-buy">
                 <button
                   onClick={() =>
                     handleButton(product.name, product.img, product.description)
