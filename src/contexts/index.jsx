@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, createContext } from "react";
 
 //Imagens dos produtos
 import EletronicsImg from "./../../public/assets/eletronics.png";
@@ -51,28 +51,28 @@ const ProductsProvider = ({ children }) => {
       name: "Pets 2",
       description: "Produtos para Pets..",
       img: PetsImg,
-    }
+    },
   });
 
-  //useState para armazenar os dados do produto escolhido e exibi-lo
-  const [productsDataVar, setProductsDataVar] = useState(
-    initialProductsDataVar
-  );
+  //useState criada para armazenar o valor de um produto a ser exibido no componente ChosenProduct(Produto escolhido)
+  const [productsDataVar, setProductsDataVar] = useState("");
 
-  useEffect(() => {
-    setProductsDataVar()
-  }, []);
+  //Arrowe function para obter os dados do produto selecionado para comprar
+  const getProductData = (name, img, description) => {
+    const newProductData = { name, img, description };
 
-  const handleButton = (name, img, description) => {
-    const newProductsDataVar = { name, img, description };
-
-    //Atualizar o estado
-    setProductsDataVar(newProductsDataVar);
+    //Atualizar o valor do useState "productDataVar"
+    setProductsDataVar(newProductData);
   };
 
   return (
     <ProductsContext.Provider
-      value={{ products, handleButton, productsDataVar }}
+      value={{
+        products,
+        getProductData,
+        productsDataVar,
+        setProductsDataVar
+      }}
     >
       {children}
     </ProductsContext.Provider>

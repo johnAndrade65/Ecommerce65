@@ -8,7 +8,8 @@ import { useContext } from "react";
 
 //Componente "Promotions" onde será exibido alguns dos produtos em promoção
 const Promotions = () => {
-  const { products, handleButton, productsDataVar } = useContext(ProductsContext);
+  const { products, getProductData } = useContext(ProductsContext);
+
 
   return (
     <div className="products-container" id="promotions">
@@ -23,10 +24,10 @@ const Promotions = () => {
                 <img src={product.img} alt="" />
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
-                <Link to={`/productdetails/${productsDataVar.name}`} className="link-buy">
+                <Link to={`/productdetails/${product.name}`} className="link-buy">
                   <button
                     onClick={() =>
-                      handleButton(
+                      getProductData(
                         product.name,
                         product.img,
                         product.description

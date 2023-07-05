@@ -12,21 +12,8 @@ import ProductsDetails from "../pages/ProductsDetails";
 import Header from "./../components/Header";
 import Footer from "./../components/Footer";
 
-//Importação dos dados do useContext
-import { useContext, useState, useEffect } from "react";
-import { ProductsContext } from "../contexts/";
-
 //Rotas/caminhos para páginas com react router
 const RoutesApp = () => {
-  const { productsDataVar } = useContext(ProductsContext);
-
-  const [productUrl, setProductUrl] = useState('');
-
-  useEffect(() => {
-    setProductUrl(productsDataVar.name);
-    console.log(productUrl);
-  }, [productsDataVar.name]);
-
   return (
     <>
       <BrowserRouter>
@@ -35,7 +22,7 @@ const RoutesApp = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route
-            path={`/productdetails/:productUrl`}
+            path="/productdetails/:productName"
             element={<ProductsDetails />}
           />
         </Routes>
