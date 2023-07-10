@@ -16,53 +16,66 @@ const ProductsProvider = ({ children }) => {
       name: "Eletronicos",
       description: "Produtos eletronico..",
       img: EletronicsImg,
+      price: "15,00 R$"
     },
     2: {
       name: "Cozinha",
       description: "Produtos de cozinha..",
       img: KitchenImg,
+      price: "13,00 R$"
     },
     3: {
       name: "Banheiro",
       description: "Produtos para banheiro..",
       img: BathroomImg,
+      price: "10,00 R$"
     },
     4: {
       name: "Pets",
       description: "Produtos para Pets..",
       img: PetsImg,
+      price: "8,00 R$"
     },
     5: {
       name: "Eletronicos 2",
       description: "Produtos eletronico..",
       img: EletronicsImg,
+      price: "17,00 R$"
     },
     6: {
       name: "Cozinha 2",
       description: "Produtos de cozinha..",
       img: KitchenImg,
+      price: "9,00 R$"
     },
     7: {
       name: "Banheiro 2",
       description: "Produtos para banheiro..",
       img: BathroomImg,
+      price: "10,00 R$"
     },
     8: {
       name: "Pets 2",
       description: "Produtos para Pets..",
       img: PetsImg,
+      price: "50,00 R$"
     },
   });
 
   //useState criada para armazenar o valor de um produto a ser exibido no componente ChosenProduct(Produto escolhido)
   const [productsDataVar, setProductsDataVar] = useState("");
 
-  //Arrowe function para obter os dados do produto selecionado para comprar
-  const getProductData = (name, img, description) => {
-    const newProductData = { name, img, description };
+  //Arrow function para obter os dados do produto selecionado para comprar
+  const getProductData = (name, img, description, price) => {
+    const newProductData = { name, img, description, price };
 
     //Atualizar o valor do useState "productDataVar"
     setProductsDataVar(newProductData);
+  };
+
+  //Arrow function criada para transformar a primeira letra do valor de alguma variavel em maiuscula
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
   return (
@@ -71,7 +84,8 @@ const ProductsProvider = ({ children }) => {
         products,
         getProductData,
         productsDataVar,
-        setProductsDataVar
+        setProductsDataVar,
+        capitalizeFirstLetter
       }}
     >
       {children}

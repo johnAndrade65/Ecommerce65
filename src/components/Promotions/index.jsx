@@ -10,7 +10,6 @@ import { useContext } from "react";
 const Promotions = () => {
   const { products, getProductData } = useContext(ProductsContext);
 
-
   return (
     <div className="products-container" id="promotions">
       <h2>Queima de estoque!</h2>
@@ -21,19 +20,17 @@ const Promotions = () => {
             const product = products[productId];
             return (
               <div key={productId} className="product">
-                <img src={product.img} alt="" />
+                <img src={product.img} alt={product.name} />
                 <h3>{product.name}</h3>
-                <p>{product.description}</p>
-                <Link to={`/productdetails/${product.name}`} className="link-buy">
-                  <button
-                    onClick={() =>
-                      getProductData(
-                        product.name,
-                        product.img,
-                        product.description
-                      )
-                    }
-                  >
+                <p className="product-description">{product.description}</p>
+                <p className="product-price">{product.price}</p>
+                <Link
+                  to={`/productdetails/${product.name
+                    .toString()
+                    .toLowerCase()}`}
+                  className="link-buy"
+                >
+                  <button>
                     Comprar agora
                   </button>
                 </Link>

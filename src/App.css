@@ -209,6 +209,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 10px 0;
+  position: relative;
 }
 .product img {
   height: 20vh;
@@ -219,10 +220,23 @@
 .product h3 {
   font-size: 25px;
 }
-.product p {
+.product .product-description {
   font-size: 15px;
+  margin-bottom: 5px;
 }
-.product .link-buy, .product .link-buy button{
+.product-price {
+  background-color: var(--main-color);
+  color: var(--white-color);
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 5px 5px 8px;
+  border-top-right-radius: 5px;
+}
+.product .link-buy,
+.product .link-buy button {
   color: var(--white-color);
   font-size: 20px;
   min-height: 50px;
@@ -233,46 +247,62 @@
   background-color: var(--main-color);
   transition: all 0.2s ease;
 }
-.product .link-buy, .product .link-buy button:hover {
+.product .link-buy,
+.product .link-buy button:hover {
   font-size: 23px;
   cursor: pointer;
 }
 
 /*Estilização do componente ChosenProduct*/
-.productDetails{
+.productDetails {
   display: flex;
   justify-content: center;
 }
-#ChosenProduct{
+#ChosenProduct {
   height: auto;
   min-height: 75vh;
   padding: 55px 0;
   flex-direction: column;
 }
-#ChosenProduct img{
+#ChosenProduct img {
   height: 500px;
   width: 100%;
   max-width: 700px;
   border-radius: 5px;
   object-fit: cover;
 }
-#ChosenProduct div{
+#ChosenProduct div {
   background-color: #f1f1f1;
   height: 200px;
   width: 100%;
   max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-areas: 
+  "name price"
+  "description description"
+  "button button";
   padding: 15px;
+  justify-content: space-between;
 }
-#ChosenProduct div h1{
+#ChosenProduct div h1 {
+  grid-area: name;
   font-size: 3em;
+  align-self: center;
 }
-#ChosenProduct div p{
+#ChosenProduct div p:last-of-type {
+  grid-area: description;
   padding: 5px;
 }
-#ChosenProduct button{
+#ChosenProduct div p:first-of-type {
+  grid-area: price;
+  font-size: 25px;
+  color: green;
+  font-weight: 600;
+  padding: 5px;
+  align-self: center;
+}
+#ChosenProduct button {
+  grid-area: button;
   color: #fff;
   font-size: 20px;
   width: 100%;
@@ -281,7 +311,7 @@
   border: none;
   border-radius: 5px;
 }
-#ChosenProduct button:hover{
+#ChosenProduct button:hover {
   cursor: pointer;
   background-color: rgb(255, 0, 0);
 }
@@ -356,18 +386,24 @@
     max-width: 300px;
   }
   .product h3 {
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
   }
-  .product p {
-    font-size: 9px;
+  .product .product-description {
+    font-size: 12px;
   }
-  .product .link-buy, .product .link-buy button {
+  .product-price {
+    font-size: 15px;
+  }
+  .product .link-buy,
+  .product .link-buy button {
     font-size: 15px;
     min-height: 40px;
     max-width: 300px;
     min-width: 150px;
   }
-  .product .link-buy, .product .link-buy button:hover {
+  .product .link-buy,
+  .product .link-buy button:hover {
     font-size: 18px;
   }
 
@@ -377,18 +413,21 @@
   }
 
   /*Estilização do componente ChosenProduct*/
-  #ChosenProduct img{
+  #ChosenProduct img {
     height: 500px;
     width: 100%;
     max-width: 500px;
   }
-  #ChosenProduct div{
+  #ChosenProduct div {
     height: 200px;
     width: 100%;
     max-width: 500px;
   }
-  #ChosenProduct div h1{
-    font-size: 2em;
+  #ChosenProduct div h1 {
+    font-size: 1.7em;
+  }
+  #ChosenProduct div p:first-of-type {
+    font-size: 20px;
   }
 }
 
@@ -419,13 +458,18 @@
   .product h3 {
     font-size: 18px;
   }
-  .product p {
+  .product .product-description {
     font-size: 9px;
   }
-  .product .link-buy, .product .link-buy button{
+  .product-price {
+    font-size: 15px;
+  }
+  .product .link-buy,
+  .product .link-buy button {
     min-width: 200px;
   }
-  .product .link-buy, .product .link-buy button:hover {
+  .product .link-buy,
+  .product .link-buy button:hover {
     font-size: 20px;
   }
 

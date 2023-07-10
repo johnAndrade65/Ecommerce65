@@ -22,7 +22,7 @@ const RoutesApp = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route
-            path="/productdetails/:productName"
+            path="/productdetails/:productUrlName"
             element={<ProductsDetails />}
           />
         </Routes>
