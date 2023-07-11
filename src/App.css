@@ -199,8 +199,8 @@
   grid-gap: 10px;
 }
 .products-container .container .product {
-  height: 300px;
-  max-height: 300px;
+  height: auto;
+  max-height: 400px;
   width: 300px;
   background-color: var(--white-color);
   border-radius: 10px;
@@ -212,7 +212,7 @@
   position: relative;
 }
 .product img {
-  height: 20vh;
+  height: auto;
   width: 100%;
   border-start-start-radius: 10px;
   border-start-end-radius: 10px;
@@ -277,10 +277,10 @@
   width: 100%;
   max-width: 700px;
   display: grid;
-  grid-template-areas: 
-  "name price"
-  "description description"
-  "button button";
+  grid-template-areas:
+    "name price"
+    "description description"
+    "button button";
   padding: 15px;
   justify-content: space-between;
 }
@@ -378,15 +378,14 @@
     grid-template-rows: repeat(2, 1fr);
   }
   .products-container .container .product {
-    min-height: 150px;
-    height: 40vw;
+    min-height: 200px;
+    height: 100%;
     max-height: 300px;
-    min-width: 150px;
-    width: 40vw;
-    max-width: 300px;
+    min-width: 200px;
+    width: 250px;
   }
   .product h3 {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
   }
   .product .product-description {
@@ -398,18 +397,13 @@
   .product .link-buy,
   .product .link-buy button {
     font-size: 15px;
-    min-height: 40px;
+    min-height: 45px;
     max-width: 300px;
-    min-width: 150px;
+    width: 100%;
   }
   .product .link-buy,
   .product .link-buy button:hover {
     font-size: 18px;
-  }
-
-  /*Estilização do componente Footer*/
-  .footer-content h3 {
-    font-size: 25px;
   }
 
   /*Estilização do componente ChosenProduct*/
@@ -429,10 +423,36 @@
   #ChosenProduct div p:first-of-type {
     font-size: 20px;
   }
+
+  /*Estilização do componente Footer*/
+  .footer-content h3 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 570px) {
+  /*Estilização do componente Products e Promotions*/
+  .products-container .container .product {
+    min-height: 200px;
+    height: 100%;
+    min-width: 200px;
+    width: 200px;
+  }
+  .product h3 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .product .link-buy,
+  .product .link-buy button {
+    font-size: 15px;
+    min-height: 50px;
+    max-width: 300px;
+    width: 100%;
+  }
 }
 
 /*Responsividade de telas com largura menor que 375px*/
-@media (max-width: 375px) {
+@media (max-width: 450px) {
   /*Estilização do componente Header*/
   .container h1 a {
     font-size: 30px;
@@ -451,9 +471,11 @@
   .products-container .container .product {
     display: flex;
     min-height: 200px;
-    height: 40vw;
+    height: 100%;
+    max-height: auto;
     min-width: 200px;
-    width: 40vw;
+    width: 100%;
+    max-width: 250px;
   }
   .product h3 {
     font-size: 18px;
