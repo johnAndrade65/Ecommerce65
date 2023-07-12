@@ -28,7 +28,7 @@ const RoutesApp = () => {
             element={<ProductsDetails />}
           />
           <Route path="/categories" element={<CategoryPage/>}/>
-          <Route path="?" element={<LoginPage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
