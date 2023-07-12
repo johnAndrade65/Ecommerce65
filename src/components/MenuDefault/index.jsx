@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 //Importação do icone do perfil de usuario
 import ProfileImg from "../../../public/assets/Profile-picture.png";
 
+
+
 //Menu default
 const MenuDefault = () => {
   return (

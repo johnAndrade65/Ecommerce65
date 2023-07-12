@@ -8,6 +8,7 @@ import HomePage from "./../pages/HomePage";
 import ProductsPage from "./../pages/ProductsPage";
 import ProductsDetails from "../pages/ProductsDetails";
 import CategoryPage from "../pages/CategoryPage";
+import LoginPage from "../pages/LoginPage";
 
 //Importação dos componentes
 import Header from "./../components/Header";
@@ -27,6 +28,7 @@ const RoutesApp = () => {
             element={<ProductsDetails />}
           />
           <Route path="/categories" element={<CategoryPage/>}/>
+          <Route path="?" element={<LoginPage/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

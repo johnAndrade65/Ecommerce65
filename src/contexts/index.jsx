@@ -132,6 +132,7 @@ const ProductsProvider = ({ children }) => {
         setProductsDataVar,
         capitalizeFirstLetter,
         categorySelectedName,
+        setCategorySelectedName,
         getCategoryName
       }}
     >
