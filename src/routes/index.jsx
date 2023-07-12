@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./../pages/HomePage";
 import ProductsPage from "./../pages/ProductsPage";
 import ProductsDetails from "../pages/ProductsDetails";
+import CategoryPage from "../pages/CategoryPage";
 
 //Importação dos componentes
 import Header from "./../components/Header";
@@ -25,6 +26,7 @@ const RoutesApp = () => {
             path="/productdetails/:productUrlName"
             element={<ProductsDetails />}
           />
+          <Route path="/categories" element={<CategoryPage/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

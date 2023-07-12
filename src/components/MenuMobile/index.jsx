@@ -34,7 +34,7 @@ const MenuMobile = () => {
               <a href="#promotions">Promoções</a>
             </li>
             <li>
-              <a href="#highlights">Categorias</a>
+              <Link to="/categories">Categorias</Link>
             </li>
             <li>
               <Link>Login</Link>

@@ -8,19 +8,21 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 //Componente "Products" onde será exibido alguns dos produtos disponiveis
-const Products = () => {
-  const { products } = useContext(ProductsContext);
-
-  const randomProducts = Object.keys(products).sort(() => Math.random() - 0.5);
+const FilteredProducts = () => {
+  const { products, categorySelectedName } = useContext(ProductsContext);
+  
+  //Variavel que irá filtrar os produtos do object "products" de acordo com o valor do useState "categorySelectedName" que representa o valor dá categoria selecionada
+  const filteredProducts = Object.entries(products)
+  .filter(([key, product]) => product.name.startsWith(categorySelectedName))
+  .map(([key, product]) => product);
 
   return (
     <div className="products-container" id="products">
-      <h2>Produtos em alta!</h2>
+      <h2>{categorySelectedName ? `Categoria ${categorySelectedName}` : "Todas as categorias"}</h2>
       <div className="container">
-        {randomProducts.slice(0, 8).map((productId) => {
-          const product = products[productId];
+        {filteredProducts.map((product) => {
           return (
-            <div key={productId} className="product">
+            <div key={product.id} className="product">
               <img src={product.img} alt={product.name} />
               <h3>{product.name}</h3>
               <p className="product-description">{product.description}</p>
@@ -36,7 +38,6 @@ const Products = () => {
         })}
       </div>
     </div>
-  );
-};
+  );}
 
-export default Products;
+export default FilteredProducts;

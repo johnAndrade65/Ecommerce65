@@ -2,7 +2,7 @@ import React from "react";
 
 //Importação dos componentes
 import Carousel from "../../components/Carousel";
-import Highlights from "./../../components/Highlights";
+import Categories from "./../../components/Categories";
 import Promotions from "./../../components/Promotions";
 import Products from "./../../components/Products";
 
@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <div>
       <Carousel />
-      <Highlights />
+      <Categories />
       <Promotions />
       <Products />
     </div>

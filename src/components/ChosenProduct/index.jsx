@@ -11,7 +11,6 @@ const ChosenProduct = () => {
   useEffect(() => {
     //Buscar os dados do produto com base no nome da URL
     const productNameUpperCase = capitalizeFirstLetter(productUrlName);
-    console.log(productNameUpperCase);
 
     const product = Object.values(products).find(
       (p) => p.name === productNameUpperCase
@@ -22,6 +21,10 @@ const ChosenProduct = () => {
     }
   }, [productUrlName, products]);
 
+  const productPurchased = () => {
+    alert(`O produto "${productsDataVar.name}" foi comprado com sucesso!`)
+  }
+
   return (
     <div className="container" id="ChosenProduct">
       <img src={productsDataVar.img} alt="" />
@@ -29,7 +32,7 @@ const ChosenProduct = () => {
         <h1>{productsDataVar.name}</h1>
         <p>{productsDataVar.price}</p>
         <p>{productsDataVar.description}</p>
-        <button>Comprar!</button>
+        <button onClick={productPurchased}>Comprar!</button>
       </div>
     </div>
   );
